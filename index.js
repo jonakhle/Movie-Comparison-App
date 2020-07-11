@@ -1,4 +1,3 @@
-//Make a network request
 const fetchData = async (searchTerm) => {
   const response = await axios.get("http://www.omdbapi.com/", {
     params: {
@@ -17,9 +16,11 @@ const onInput = (event) => {
   if (timeoutId) {
     clearTimeout(timeoutId);
   }
-  timeoutid = setTimeout(() => {
+  timeoutId = setTimeout(() => {
     fetchData(event.target.value);
-  }, 1000);
+  }, 500);
 };
 
 input.addEventListener("input", onInput);
+
+//api key
